@@ -1,0 +1,14 @@
+{
+    "name": "asmp/sample-server",
+    "description": "Sample Server for the Application Server Management Protocol",
+    "type": "project",
+    "require": {
+        "react/stream": "^1.1",
+        "react/http": "^0.8.4"
+    },
+    "require-dev": {
+        "guzzlehttp/guzzle": "^6.3",
+        "phpunit/phpunit": "^8.0"
+    },
+    "license": "MIT"
+}

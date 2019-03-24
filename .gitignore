@@ -1,0 +1,7 @@
+vendor/
+.idea
+.DS_STORE
+.swp
+.tmp
+.phpunit.result.cache
+
