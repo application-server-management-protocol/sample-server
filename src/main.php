@@ -59,7 +59,7 @@ $server = new Server(function (ServerRequestInterface $request) {
 
 });
 
-$socket = new React\Socket\Server(8080, $loop);
+$socket = new React\Socket\Server('0.0.0.0:8080', $loop);
 $server->listen($socket);
 
 $loop->run();
