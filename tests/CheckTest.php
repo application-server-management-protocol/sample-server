@@ -25,12 +25,32 @@ class CheckTest extends \PHPUnit\Framework\TestCase
 
 	public function testPOST()
 	{
+		eval(">= 7.0 && < 7.3");
 		// Client sample
-		$data = array(
-			'' => 'test',
-			'avatarNumber' => 5,
-			'tagLine' => 'a test dev!'
-		);
+		$data = [
+			'components' => [
+				'name' => 'php',
+				'constraintType' => 'VERSION',
+				'constraint' => [
+					"value" => ">= 7.0 && < 7.3",
+				],
+			],
+			[
+				'name' => 'mysql',
+				'constraintType' => 'VERSION',
+				'constraint' => [
+					"value" => ">= 5.5 && <= 5.7",
+				],
+			],
+			[
+				'name' => 'php_gd',
+				'constraintType' => 'VERSION',
+				'constraint' => [
+					"value" => "> 0",
+				],
+			],
+
+		];
 
 		$response = $this->client->post('/v1/check', ['body' => json_encode($data)]);
 

@@ -23,13 +23,16 @@ $server = new Server(function (ServerRequestInterface $request) {
 		$data = json_decode($request->getBody(), true);
 
 		// Check what server is able to offer
+		if ($data['components'])
+		{
+			// Iterate over it and check on your software
+		}
 
 		$checkResponse = new CheckResponse();
 		$checkResponse->setFullfillable(true);
-		$checkResponse->addComponent('PHP', '7.2.3');
-		$checkResponse->addComponent('MySQL', '5.7.5');
+		$checkResponse->addComponent('php', '7.2.3');
+		$checkResponse->addComponent('mysql', '5.7.5');
 		$checkResponse->addComponent('php_gd', '7.2.3');
-
 
 		// Return list of proposed changes
 		return new Response(200, ['Content-Type' => 'text/json'],  json_encode($checkResponse));
